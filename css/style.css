@@ -359,4 +359,33 @@ body.dark-mode .chart-card {
   margin-top: 8px;
 }
 
+.intro-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.intro-images figure {
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.intro-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.intro-images figcaption {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+
+
 
