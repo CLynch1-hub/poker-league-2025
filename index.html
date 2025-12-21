@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Letterkenny Poker Hunter League 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="sidebar-header">
+      <h1>Letterkenny Poker Hunter League 2025</h1>
+      <p>Season 2025</p>
+    </div>
+
+    <!-- Hamburger Menu (mobile only) -->
+    <div class="hamburger" onclick="document.querySelector('.sidebar-nav').classList.toggle('open')">
+      ☰ Menu
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="nav-link dark-mode-toggle" onclick="document.body.classList.toggle('dark-mode')">
+      🌙 Dark Mode
+    </button>
+
+    <!-- Navigation Buttons -->
+    <nav class="sidebar-nav">
+      <button class="nav-link active" data-target="intro">Introduction</button>
+      <button class="nav-link" data-target="structure">Game Structure</button>
+      <button class="nav-link" data-target="hosts">Hosts & Schedule</button>
+      <button class="nav-link" data-target="results">Player Results</button>
+      <button class="nav-link" data-target="leaderboard">Leaderboard</button>
+      <button class="nav-link" data-target="players">Players</button>
+      <button class="nav-link" data-target="charts">Charts</button>
+      <button class="nav-link" data-target="conclusion">Conclusion</button>
+    </nav>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- Introduction -->
+    <section id="intro" class="content-section active">
+      <h2>Introduction</h2>
+      <p>
+        Welcome to the Letterkenny Poker Hunter League 2025. This site tracks the full
+        season, including hosts, game structure, player results, the running leaderboard,
+        and summary charts. It’s designed so players can easily follow the action and
+        look back over the season.
+      </p>
+      <p>
+        Use the navigation on the left (or the menu button on mobile) to move between
+        sections. Tables are updated from CSV files, making it easy to maintain the league
+        from week to week.
+      </p>
+    </section>
+
+    <!-- Game Structure -->
+    <section id="structure" class="content-section">
+      <h2>Game Structure</h2>
+      <p>
+        The game structure outlines the buy-ins, blinds, payout structure, and points
+        awarded each night. This ensures consistency and transparency throughout the season.
+      </p>
+      <div class="table-wrapper">
+        <div id="structure-table"></div>
+      </div>
+    </section>
+
+    <!-- Hosts & Schedule -->
+    <section id="hosts" class="content-section">
+      <h2>Hosts & Schedule</h2>
+      <p>
+        The league rotates between hosts to keep things fresh and share the responsibility
+        of running games. The schedule shows who is hosting each night and the planned dates.
+      </p>
+      <div class="table-wrapper">
+        <div id="hosts-table"></div>
+      </div>
+    </section>
+
+    <!-- Player Results -->
+    <section id="results" class="content-section">
+      <h2>Player Results</h2>
+      <p>
+        Here you’ll find the full breakdown of nightly results, including finishes, points,
+        and any bonuses. This feeds directly into the leaderboard standings.
+      </p>
+      <div class="table-wrapper">
+        <div id="results-table"></div>
+      </div>
+    </section>
+
+    <!-- Leaderboard -->
+    <section id="leaderboard" class="content-section">
+      <h2>Leaderboard</h2>
+      <p>
+        The leaderboard reflects the cumulative performance across the season. Top three
+        positions are highlighted to celebrate the current front-runners.
+      </p>
+      <div class="table-wrapper">
+        <div id="leaderboard-table"></div>
+      </div>
+    </section>
+
+    <!-- Players -->
+    <section id="players" class="content-section">
+      <h2>Players</h2>
+      <p>
+        A list of all players taking part in the 2025 season, including contact details
+        or notes if you choose to include them in the CSV.
+      </p>
+      <div class="table-wrapper">
+        <div id="players-table"></div>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section id="charts" class="content-section">
+      <h2>Season Charts</h2>
+      <p>
+        Visual summaries of the season: trends in points, consistency, and other stats
+        that bring the league data to life.
+      </p>
+      <div class="charts-grid">
+        <figure class="chart-card">
+          <img src="charts/points_over_time.png" alt="Points over time chart">
+          <figcaption>Points progression across the season</figcaption>
+        </figure>
+        <figure class="chart-card">
+          <img src="charts/finishes_distribution.png" alt="Finishes distribution chart">
+          <figcaption>Distribution of podium finishes</figcaption>
+        </figure>
+        <!-- Add or adjust chart images as needed -->
+      </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" class="content-section">
+        <h2>Season Conclusion</h2>
+        <p>
+          The 2025 Letterkenny Poker Hunter League has officially come to a close, marking another year of dumb-ass plays, stupid rebuys, and unforgettable nights around the table. 
+        </p>
+        <p> 
+          With a final night of Bollywood nut farts galore!. Brendan attacked the table with his mighty full house, only for captain Morgan to demolish his house like mica bricks with the poker of 2s
+        </p>
+
+        <p>
+          After months going all-in like at an all-inclusive buffet, <strong>Kevin Lee</strong> emerged as the 2025 League Champion. If only Arsenal follows his lead into May 2026.
+        </p>
+        <p>
+         <strong>How could the events Manager allow such multiple illegal rebuys! </strong>
+       </p>
+
+        <p><em>Thanks to the Event Manager and champions league qualifier, Martin, ROI Champion!</em></p>
+    </section>
+
+  </main>
+
+  <script src="js/tableloader.js"></script>
+</body>
+</html>
