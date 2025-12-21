@@ -1,0 +1,338 @@
+/* ----------------------------------------------------
+   BASE STYLES
+   ---------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #121212;
+  color: #f5f5f5;
+}
+
+/* Layout */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: #1b1b1b;
+  padding: 20px;
+  border-right: 2px solid rgba(255, 215, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-header h1 {
+  font-size: 1.4rem;
+  margin: 0 0 5px;
+  color: gold;
+}
+
+.sidebar-header p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.content {
+  margin-left: 260px;
+  padding: 20px 30px;
+}
+
+/* Sections */
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+/* Navigation buttons */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-link {
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #f5f5f5;
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.nav-link:hover {
+  background: #333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.nav-link.active {
+  background: gold;
+  color: #000;
+}
+
+/* Dark mode toggle style tweak */
+.dark-mode-toggle {
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* Text */
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Tables */
+.table-wrapper {
+  margin-top: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #1e1e1e;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e1e1e;
+  color: #f5f5f5;
+  font-size: 0.95rem;
+}
+
+thead {
+  background: #232323;
+}
+
+th,
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Charts */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.chart-card {
+  background: #1e1e1e;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chart-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.chart-card figcaption {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ----------------------------------------------------
+   STICKY TABLE HEADERS (DESKTOP + TABLET)
+   ---------------------------------------------------- */
+.table-wrapper {
+  position: relative;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+table thead th {
+  position: sticky;
+  top: 0;
+  background: #232323;
+  z-index: 2;
+}
+
+/* ----------------------------------------------------
+   LEADERBOARD TOP 3 HIGHLIGHTING
+   ---------------------------------------------------- */
+#leaderboard-table tbody tr:nth-child(1) {
+  background: rgba(255, 215, 0, 0.25);
+  font-weight: bold;
+}
+
+#leaderboard-table tbody tr:nth-child(2) {
+  background: rgba(192, 192, 192, 0.25);
+}
+
+#leaderboard-table tbody tr:nth-child(3) {
+  background: rgba(205, 127, 50, 0.25);
+}
+
+/* ----------------------------------------------------
+   DARK MODE (USES body.dark-mode)
+   ---------------------------------------------------- */
+body.dark-mode {
+  background: #000;
+  color: #f0f0f0;
+}
+
+body.dark-mode .sidebar {
+  background: #151515;
+  border-right-color: rgba(255, 215, 0, 0.5);
+}
+
+body.dark-mode table {
+  background: #181818;
+  color: #f0f0f0;
+}
+
+body.dark-mode th {
+  background: #262626;
+}
+
+body.dark-mode .chart-card {
+  background: #181818;
+}
+
+/* ----------------------------------------------------
+   HAMBURGER MENU
+   ---------------------------------------------------- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: gold;
+  margin-bottom: 8px;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE LAYOUT
+   ---------------------------------------------------- */
+@media (max-width: 900px) {
+  .sidebar-header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px 15px;
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar-nav {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .sidebar-nav.open {
+    display: flex;
+  }
+
+  .nav-link {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------------------------
+   VERY SMALL SCREENS (CARD-STYLE TABLES)
+   ---------------------------------------------------- */
+@media (max-width: 480px) {
+
+  table {
+    display: block;
+    border: 0;
+    min-width: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+    display: block;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+  }
+
+  tbody td:last-child {
+    border-bottom: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: gold;
+    margin-right: 10px;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
