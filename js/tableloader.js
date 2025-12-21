@@ -15,6 +15,8 @@ function createTable(containerId, csvPath) {
       if (!rows.length) return;
 
       const container = document.getElementById(containerId);
+      if (!container) return;
+
       const table = document.createElement("table");
       const thead = document.createElement("thead");
       const tbody = document.createElement("tbody");
@@ -32,9 +34,11 @@ function createTable(containerId, csvPath) {
       rows.slice(1).forEach(row => {
         if (row.length === 1 && row[0] === "") return;
         const tr = document.createElement("tr");
-        row.forEach(cell => {
+        row.forEach((cell, i) => {
           const td = document.createElement("td");
           td.textContent = cell;
+          // For mobile card layout: label with column header
+          td.setAttribute("data-label", rows[0][i] || "");
           tr.appendChild(td);
         });
         tbody.appendChild(tr);
@@ -54,16 +58,28 @@ function setupNav() {
   const sections = document.querySelectorAll(".content-section");
 
   buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const target = btn.getAttribute("data-target");
+    const target = btn.getAttribute("data-target");
+    if (!target) return; // skip dark-mode button etc.
 
-      buttons.forEach(b => b.classList.remove("active"));
+    btn.addEventListener("click", () => {
+      // Update active button
+      buttons.forEach(b => {
+        const t = b.getAttribute("data-target");
+        if (t) b.classList.remove("active");
+      });
       btn.classList.add("active");
 
+      // Show matching section
       sections.forEach(sec => {
         if (sec.id === target) sec.classList.add("active");
         else sec.classList.remove("active");
       });
+
+      // On mobile, close the menu after selection
+      const nav = document.querySelector(".sidebar-nav");
+      if (nav && nav.classList.contains("open")) {
+        nav.classList.remove("open");
+      }
     });
   });
 }
@@ -77,7 +93,5 @@ document.addEventListener("DOMContentLoaded", () => {
   createTable("hosts-table", "data/Hosts.csv");
   createTable("results-table", "data/Player Game Results.csv");
   createTable("players-table", "data/Poker Players.csv");
-
-  // NEW: Load leaderboard from Leaderboard.csv
   createTable("leaderboard-table", "data/Leaderboard.csv");
 });
