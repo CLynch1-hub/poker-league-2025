@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="UTF-8">
+  <title>Donegal Poker League 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Donegal Poker League</h1>
+        <p>Season 2025</p>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-link active" data-target="intro">Introduction</button>
+        <button class="nav-link" data-target="structure">Game Structure</button>
+        <button class="nav-link" data-target="hosts">Hosts & Schedule</button>
+        <button class="nav-link" data-target="results">Player Results</button>
+        <button class="nav-link" data-target="leaderboard">Leaderboard</button>
+        <button class="nav-link" data-target="players">Players</button>
+        <button class="nav-link" data-target="charts">Charts</button>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+
+      <!-- Introduction / Opening night -->
+      <section id="intro" class="content-section active">
+        <h2>Highlights of League Opening Night — 24 January 2025</h2>
+
+        <p>Storm Éowyn wasn’t enough to put off six brave poker players. Martin abandoned his wife in search of heat and light. Unfortunately, two squad players — Brendan and Steven — have morals!</p>
+
+        <p>As usual, Morgan arrived just in time for the first break. Delighted to see Pocket 5s four times, he held up three — but his 99 and QQ fell to the sword every time, resulting in a rebuy. Hard to beat Kevin’s 7-2 off, as usual.</p>
+
+        <p>The River Lee was in full flow, not a rebuy in sight — until he thought he could defeat the Director. As the night drew to a close, counting his €46, he raised three times with 88, only to meet resistance as Lynch reraised. Not to be deterred, Kevin jumped at the chance to steal the show with an all-in, only to get an instant call with KK, sending his night crashing down. So shocked was I, and under pressure from Kevin’s master plays, that I collapsed to the floor in shock — doing more damage than Éowyn.</p>
+
+        <p>Bollywood bluffs were the star of the show, but not enough to stop Barry throwing in the orange chip before he could get a nut fart out. A poker of 6s kept him in the game until he sheepishly folded to an audacious K4 river Diver raise.</p>
+
+        <p>Who raised six times the big blind with pocket 10s and got called by 8-5 offsuit? Our events manager. Unbelievable, Jeff!</p>
+      </section>
+
+      <!-- Game Structure -->
+      <section id="structure" class="content-section">
+        <h2>Game Structure</h2>
+        <div id="structure-table" class="table-wrapper">
+          <!-- Filled by JS from Game Structure.csv -->
+        </div>
+      </section>
+
+      <!-- Hosts & Schedule -->
+      <section id="hosts" class="content-section">
+        <h2>Hosts & Schedule</h2>
+        <div id="hosts-table" class="table-wrapper">
+          <!-- Filled by JS from Hosts.csv -->
+        </div>
+      </section>
+
+      <!-- Player Results -->
+      <section id="results" class="content-section">
+        <h2>Player Results</h2>
+        <p class="section-note">
+          All game-by-game results for the 2025 season.
+        </p>
+        <div id="results-table" class="table-wrapper">
+          <!-- Filled by JS from Player Game Results.csv -->
+        </div>
+      </section>
+
+      <!-- Leaderboard (simple, based on ROI / profit) -->
+      <section id="leaderboard" class="content-section">
+        <h2>Leaderboard</h2>
+        <p class="section-note">
+          Totals calculated from game results: buy-ins, cash outs and profit.
+        </p>
+        <div id="leaderboard-table" class="table-wrapper">
+          <!-- Filled by JS after processing Player Game Results.csv -->
+        </div>
+      </section>
+
+      <!-- Players -->
+      <section id="players" class="content-section">
+        <h2>Players</h2>
+        <div id="players-table" class="table-wrapper">
+          <!-- Filled by JS from Poker Players.csv -->
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <section id="charts" class="content-section">
+        <h2>Charts</h2>
+
+        <div class="chart-block">
+          <h3>League Points</h3>
+          <img src="images/league_points.png" alt="League Points chart">
+        </div>
+
+        <div class="chart-block">
+          <h3>2025 Total Return on Investment</h3>
+          <img src="images/roi_2025.png" alt="2025 ROI chart">
+        </div>
+
+        <div class="chart-block">
+          <h3>Total Spend to Date</h3>
+          <img src="images/total_spend.png" alt="Total Spend chart">
+        </div>
+
+        <div class="chart-block">
+          <h3>Tournament Hosts</h3>
+          <img src="images/tournament_hosts.png" alt="Tournament Hosts chart">
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/tableloader.js"></script>
+</body>
+</html>
