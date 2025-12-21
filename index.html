@@ -2,7 +2,7 @@
 <html lang="en-IE">
 <head>
   <meta charset="UTF-8">
-  <title>Letterkenny Poker Hunter League 2025</title>
+  <title>The Letterkenny Poker Hunter League 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/style.css">
@@ -12,10 +12,23 @@
 
     <!-- Sidebar -->
     <aside class="sidebar">
+
       <div class="sidebar-header">
         <h1>Letterkenny Poker Hunter League 2025</h1>
         <p>Season 2025</p>
       </div>
+
+      <!-- Hamburger Menu (mobile only) -->
+      <div class="hamburger" onclick="document.querySelector('.sidebar-nav').classList.toggle('open')">
+        ☰ Menu
+      </div>
+
+      <!-- Dark Mode Toggle -->
+      <button class="nav-link" style="margin-bottom:10px;" onclick="document.body.classList.toggle('dark-mode')">
+        🌙 Dark Mode
+      </button>
+
+      <!-- Navigation Buttons -->
       <nav class="sidebar-nav">
         <button class="nav-link active" data-target="intro">Introduction</button>
         <button class="nav-link" data-target="structure">Game Structure</button>
@@ -25,7 +38,9 @@
         <button class="nav-link" data-target="players">Players</button>
         <button class="nav-link" data-target="charts">Charts</button>
       </nav>
+
     </aside>
+
 
     <!-- Main content -->
     <main class="content">
@@ -76,7 +91,7 @@
       <section id="leaderboard" class="content-section">
         <h2>Leaderboard</h2>
         <p class="section-note">
-          Totals calculated from game results: buy-ins, cash outs and profit.
+          League standings based on total points.
         </p>
         <div id="leaderboard-table" class="table-wrapper">
           <!-- Filled by JS after processing Player Game Results.csv -->
@@ -122,4 +137,3 @@
   <script src="js/tableloader.js"></script>
 </body>
 </html>
-
