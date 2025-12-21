@@ -261,3 +261,190 @@ tbody tr:nth-child(even) {
     font-size: 12px;
   }
 }
+
+
+/* ----------------------------------------------------
+   MOBILE OPTIMISATION (TABLES, NAV, TYPOGRAPHY)
+   ---------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Sidebar becomes a top navigation bar */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px 15px;
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  }
+
+  /* Navigation buttons become horizontal and wrap */
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    flex: 1 1 auto;
+    padding: 10px 12px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 6px;
+  }
+
+  /* Content fills the full width */
+  .content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  /* Tables scroll horizontally */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    font-size: 14px;
+    min-width: 500px;
+  }
+
+  /* Headings slightly smaller */
+  h1, h2 {
+    font-size: 1.4rem;
+  }
+
+  p, li {
+    font-size: 0.95rem;
+  }
+}
+
+/* ----------------------------------------------------
+   VERY SMALL SCREENS (CARD-STYLE TABLES)
+   ---------------------------------------------------- */
+@media (max-width: 480px) {
+
+  table {
+    display: block;
+    border: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 12px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  tbody td:last-child {
+    border-bottom: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: gold;
+    margin-right: 10px;
+  }
+}
+
+/* ----------------------------------------------------
+   STICKY TABLE HEADERS (DESKTOP + TABLET)
+   ---------------------------------------------------- */
+.table-wrapper {
+  position: relative;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+table thead th {
+  position: sticky;
+  top: 0;
+  background: #222;
+  z-index: 2;
+}
+
+/* ----------------------------------------------------
+   LEADERBOARD TOP 3 HIGHLIGHTING
+   ---------------------------------------------------- */
+#leaderboard-table tbody tr:nth-child(1) {
+  background: rgba(255, 215, 0, 0.25);
+  font-weight: bold;
+}
+
+#leaderboard-table tbody tr:nth-child(2) {
+  background: rgba(192, 192, 192, 0.25);
+}
+
+#leaderboard-table tbody tr:nth-child(3) {
+  background: rgba(205, 127, 50, 0.25);
+}
+
+/* ----------------------------------------------------
+   OPTIONAL DARK MODE
+   ---------------------------------------------------- */
+body.dark-mode {
+  background: #111;
+  color: #eee;
+}
+
+body.dark-mode .sidebar {
+  background: #222;
+  border-bottom-color: rgba(255, 215, 0, 0.4);
+}
+
+body.dark-mode table {
+  background: #222;
+  color: #eee;
+}
+
+body.dark-mode th {
+  background: #333;
+}
+
+body.dark-mode .nav-link.active {
+  background: gold;
+  color: #000;
+}
+
+/* ----------------------------------------------------
+   OPTIONAL HAMBURGER MENU FOR MOBILE
+   ---------------------------------------------------- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 26px;
+  color: gold;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar-nav {
+    display: none;
+  }
+
+  .sidebar-nav.open {
+    display: flex;
+  }
+}
+
+
+
